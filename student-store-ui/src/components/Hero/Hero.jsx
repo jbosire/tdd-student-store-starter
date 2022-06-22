@@ -1,6 +1,6 @@
-import * as React from "react"
-import "./Hero.css"
+import * as React from "react";
+import "./Hero.css";
 
-export default function Hero(){
-    
+export default function Hero() {
+  return <div className="Hero"></div>;
 }

@@ -1,43 +1,36 @@
-import * as React from "react"
-import Navbar from "../Navbar/Navbar"
-import Sidebar from "../Sidebar/Sidebar"
-import Home from "../Home/Home"
-import ProductDetail from "../ProductDetail/ProductDetail"
-import NotFound from "../NotFound/NotFound"
-import "./App.css"
-import {BrowserRouter, Route, Routes} from "react-router-dom"
-import {useState} from "react"
-import { useEffect } from "react"
-
-
+import * as React from "react";
+import Navbar from "../Navbar/Navbar";
+import Sidebar from "../Sidebar/Sidebar";
+import Home from "../Home/Home";
+import ProductDetail from "../ProductDetail/ProductDetail";
+import NotFound from "../NotFound/NotFound";
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useState } from "react";
+import { useEffect } from "react";
+import axios from "axios";
 
 export default function App() {
-  const [products,setProducts] = useState([])
-  const [isFetching,setIsFetching] = useState(null)
-  const [error,setError] = useState(null)
-  const [isOpen,setIsOpen] = useState(null)
-  const [shoppingCart,setShoppingCart] = useState([])
-  const [checkoutForm,setcheckoutForm] = useState(null)
-
-  
+  const [products, setProducts] = useState([]);
+  const [isFetching, setIsFetching] = useState(null);
+  const [error, setError] = useState(null);
+  const [isOpen, setIsOpen] = useState(null);
+  const [shoppingCart, setShoppingCart] = useState([]);
+  const [checkoutForm, setcheckoutForm] = useState(null);
 
   useEffect(async () => {
-
     let url = `https://codepath-store-api.herokuapp.com/store`;
     console.log(url);
 
-    try{
-        let response = await fetch(url);
-        console.log("response is: ", response);
-        let responseData = await response.json();
-        console.log("responseData is: ", responseData);
-        setProducts(responseData);
-       
-        
-    }
-    catch(e){
-        console.log(e);
-        setError(e);
+    try {
+      let response = await axios.get(url);
+      console.log("response is: ", response);
+      let responseData = response.data;
+      console.log("responseData is: ", responseData);
+      setProducts(responseData.products);
+    } catch (e) {
+      console.log(e);
+      setError(e);
     }
   }, []);
 
@@ -45,101 +38,88 @@ export default function App() {
     var newItem;
     var newCart = [];
 
-    for(var i=0; i < shoppingCart.length; i++){
-      if(shoppingCart[i].itemId === productId){
+    for (var i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId === productId) {
         newItem = {
           itemId: productId,
           quantity: shoppingCart[i].quantity + 1,
-
-
-        }
+        };
 
         newCart.concat(newItem);
-      } else if(i === shoppingCart.length - 1){
+      } else if (i === shoppingCart.length - 1) {
         newItem = {
           itemId: productId,
           quantity: 1,
-        }
+        };
 
         newCart.concat(newItem);
-
       }
-
     }
 
     setShoppingCart(newCart);
-
-  
-  }
+  };
 
   const handleRemoveItemFromCart = (productId) => {
     var newItem;
     var newCart = [];
 
-    for(var i=0; i < shoppingCart.length; i++){
-      if(shoppingCart[i].itemId === productId){
+    for (var i = 0; i < shoppingCart.length; i++) {
+      if (shoppingCart[i].itemId === productId) {
         var newQty = shoppingCart[i].quantity - 1;
-        if(newQty > 0){
-        newItem = {
-          itemId: productId,
-          quantity: newQty,
+        if (newQty > 0) {
+          newItem = {
+            itemId: productId,
+            quantity: newQty,
+          };
 
-
+          newCart.concat(newItem);
         }
-        
-        newCart.concat(newItem);
-       }
-      } 
+      }
     }
 
     setShoppingCart(newCart);
-
-
-  
-  }
+  };
 
   const handleOnToggle = () => {
-    if(isOpen){
+    if (isOpen) {
       setIsOpen(false);
-    }
-    else{
+    } else {
       setIsOpen(true);
     }
-  
-  }
+  };
 
-  const handleOnCheckoutFormChange = () => {
+  const handleOnCheckoutFormChange = (name, value) => {};
 
-
-  
-  }
-
-  const handleOnSubmitCheckoutForm = () => {
-
-  
-  }
-
+  const handleOnSubmitCheckoutForm = () => {};
 
   return (
     <div className="app">
       <BrowserRouter>
-        
-
-           
         <main>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products/:productId" element={<ProductDetail handleAddItemToCart={() => handleAddItemToCart()} handleRemoveItemFromCart={() => handleRemoveItemFromCart()}/>} />
-          <Route path="*" element={<NotFound />} />
-
-        </Routes>
-          
-  
-         
-          
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <Home
+                  products={products}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
+                />
+              }
+            />
+            <Route
+              path="/products/:productId"
+              element={
+                <ProductDetail
+                  handleAddItemToCart={() => handleAddItemToCart()}
+                  handleRemoveItemFromCart={() => handleRemoveItemFromCart()}
+                />
+              }
+            />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
         </main>
-        
       </BrowserRouter>
     </div>
-  )
+  );
 }
