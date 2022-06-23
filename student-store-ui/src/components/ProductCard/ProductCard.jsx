@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 export default function ProductCard(props) {
   return (
@@ -35,7 +36,10 @@ export default function ProductCard(props) {
               <i className="material-icons">remove</i>
             </button>
           </div>
-          <span className="product-quantity" >{props.quantity}</span>
+
+          {props.quantity ? (
+            <span className="product-quantity">{props.quantity}</span>
+          ) : null}
         </div>
       </div>
     </div>

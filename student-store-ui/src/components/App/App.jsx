@@ -42,23 +42,17 @@ export default function App() {
 
     for (var i = 0; i < shoppingCart.length; i++) {
       if (shoppingCart[i].itemId === productId) {
-        newItem = {
-          itemId: productId,
-          quantity: shoppingCart[i].quantity + 1,
-        };
-
-        newCart.concat(newItem);
-      } else if (i === shoppingCart.length - 1) {
-        newItem = {
-          itemId: productId,
-          quantity: 1,
-        };
-
-        newCart.concat(newItem);
+        shoppingCart[i].quantity++;
+        setShoppingCart([...shoppingCart]);
+        return;
       }
     }
+    newItem = {
+      itemId: productId,
+      quantity: 1,
+    };
 
-    setShoppingCart(newCart);
+    setShoppingCart([newItem, ...shoppingCart]);
   };
 
   const handleRemoveItemFromCart = (productId) => {
@@ -67,26 +61,20 @@ export default function App() {
 
     for (var i = 0; i < shoppingCart.length; i++) {
       if (shoppingCart[i].itemId === productId) {
-        var newQty = shoppingCart[i].quantity - 1;
-        if (newQty > 0) {
-          newItem = {
-            itemId: productId,
-            quantity: newQty,
-          };
-          // shoppingCart.find()
-
-          newCart.concat(newItem);
+        if (shoppingCart[i].quantity != 1) {
+          shoppingCart[i].quantity--;
+          setShoppingCart([...shoppingCart]);
+          return;
+        } else {
+          shoppingCart.splice(i, 1);
+          setShoppingCart([...shoppingCart]);
+          return;
         }
       }
     }
 
     setShoppingCart(newCart);
   };
-  var cat = [];
-  cat.push(item);
-  //  console.log(item);
-  const res = products.find(({ id }) => id === item.itemId);
-  console.log(res);
 
   // console.log(shoppingCart);
 

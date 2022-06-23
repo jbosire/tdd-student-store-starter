@@ -11,21 +11,20 @@
   flex-basis: 0%;
 }
 
-.product-card{
-    height: 380px;
-    
-    background: white;
-    display: flex;
-    flex-direction: column;
-    border: solid 1px #e4e4e4;
-    
+.product-card {
+  height: 380px;
+
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #e4e4e4;
 }
-.product-name{
-    transform: translateY(-14px);
+.product-name {
+  transform: translateY(-14px);
 }
 
-.product-price{
-    transform: translateY(-14px);
+.product-price {
+  transform: translateY(-14px);
 }
 
 .main-info {
@@ -98,10 +97,19 @@
 }
 
 .product-quantity {
-  width: 80px;
+  width: 20px;
+  height: 20px;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 5px;
-  transform: translateY(-30px);
+  background: #ff9017;
+  color: white;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  
+  
+  transform: translate(50px)
+  translateY(-35px)
+ 
+
+  
 }
