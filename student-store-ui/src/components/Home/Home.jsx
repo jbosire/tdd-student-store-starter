@@ -9,13 +9,14 @@ export default function Home(props) {
   return (
     <div className="home">
       <Navbar />
-      <Sidebar />
+      <Sidebar handleOnCheckOutFormChange={props.handleOnCheckOutFormChange} handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm} handleOnToggle={props.handleOnToggle} checkoutForm={props.checkoutForm} isOpen={props.isOpen} shoppingCart={props.shoppingCart} products={props.products}/>
       <Hero />
       <ProductGrid
         products={props.products}
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
         shoppingCart={props.shoppingCart}
+
       />
     </div>
   );

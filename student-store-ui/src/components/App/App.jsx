@@ -88,7 +88,6 @@ export default function App() {
   const res = products.find(({ id }) => id === item.itemId);
   console.log(res);
 
-
   // console.log(shoppingCart);
 
   const handleOnToggle = () => {
@@ -112,10 +111,15 @@ export default function App() {
               path="/"
               element={
                 <Home
+                  handleOnToggle={handleOnToggle}
+                  handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                  handleOnSubmitCheckoutForm={handleOnCheckoutFormChange}
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
                   shoppingCart={shoppingCart}
+                  isOpen={isOpen}
+                  checkoutForm={checkoutForm}
                 />
               }
             />
