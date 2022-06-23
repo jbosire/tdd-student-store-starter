@@ -11,6 +11,11 @@ import { useEffect } from "react";
 import axios from "axios";
 
 export default function App() {
+  var item = {
+    itemId: 4,
+    quantity: 2,
+  };
+
   const [products, setProducts] = useState([]);
   const [isFetching, setIsFetching] = useState(null);
   const [error, setError] = useState(null);
@@ -20,13 +25,10 @@ export default function App() {
 
   useEffect(async () => {
     let url = `https://codepath-store-api.herokuapp.com/store`;
-    console.log(url);
 
     try {
       let response = await axios.get(url);
-      console.log("response is: ", response);
       let responseData = response.data;
-      console.log("responseData is: ", responseData);
       setProducts(responseData.products);
     } catch (e) {
       console.log(e);
@@ -71,6 +73,7 @@ export default function App() {
             itemId: productId,
             quantity: newQty,
           };
+          // shoppingCart.find()
 
           newCart.concat(newItem);
         }
@@ -79,6 +82,14 @@ export default function App() {
 
     setShoppingCart(newCart);
   };
+  var cat = [];
+  cat.push(item);
+  //  console.log(item);
+  const res = products.find(({ id }) => id === item.itemId);
+  console.log(res);
+
+
+  // console.log(shoppingCart);
 
   const handleOnToggle = () => {
     if (isOpen) {
@@ -104,6 +115,7 @@ export default function App() {
                   products={products}
                   handleAddItemToCart={handleAddItemToCart}
                   handleRemoveItemFromCart={handleRemoveItemFromCart}
+                  shoppingCart={shoppingCart}
                 />
               }
             />

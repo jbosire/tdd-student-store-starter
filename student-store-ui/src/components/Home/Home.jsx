@@ -15,6 +15,7 @@ export default function Home(props) {
         products={props.products}
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
+        shoppingCart={props.shoppingCart}
       />
     </div>
   );
