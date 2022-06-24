@@ -3,12 +3,23 @@ import "./ShoppingCart.css";
 import { useState } from "react";
 
 export default function ShoppingCart(props) {
+  var totPrice = 0;
+  props.shoppingCart.forEach((item) => {
+    totPrice +=
+      props.products.find((elem) => elem.id === item.itemId).price *
+      item.quantity;
+  });
+
+  var taxes = totPrice * 0.0875;
+
+  
+
   return (
-    <div className="shoppingCart">
+    <div className="shopping-cart">
       <div className={props.isOpen ? "open" : "closed"}>
         <h3>
           Shopping Cart
-          <span>
+          <span className="icon">
             <i className="material-icons md-48">add_shopping_cart</i>
           </span>
         </h3>
@@ -30,10 +41,10 @@ export default function ShoppingCart(props) {
                   {item.quantity}
                 </span>
                 <span className="center cart-product-price">
-                  {props.products.find((elem) => elem.id === item.itemId).price}
+                {"$" + props.products.find((elem) => elem.id === item.itemId).price}
                 </span>
                 <span className="center cart-product-subtotal">
-                  {item.quantity *
+                 {"$" + item.quantity *
                     props.products.find((elem) => elem.id === item.itemId)
                       .price}
                 </span>
@@ -45,19 +56,19 @@ export default function ShoppingCart(props) {
               <span className="label">Subtotal</span>
               <span></span>
               <span></span>
-              <span className="center subtotal"></span>
+              <span className="center subtotal">{"$" + totPrice}</span>
             </div>
             <div className="receipt-taxes">
               <span className="label">Taxes and Fees</span>
               <span></span>
               <span></span>
-              <span className="center"></span>
+              <span className="center">{"$" + taxes}</span>
             </div>
             <div className="receipt-total">
               <span className="label">Total</span>
               <span></span>
               <span></span>
-              <span className="center total-price"></span>
+              <span className="center total-price">{"$" + totPrice + taxes}</span>
             </div>
           </div>
         </div>

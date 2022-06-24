@@ -7,7 +7,9 @@
   background: #2c4047;
   overflow-x: hidden;
   padding-top: 60px;
- 
+}
+.sidebar {
+  max-width: 100px;
 }
 
 .sidenav .open {
