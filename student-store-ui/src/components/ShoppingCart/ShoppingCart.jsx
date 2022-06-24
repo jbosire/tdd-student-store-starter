@@ -3,7 +3,6 @@ import "./ShoppingCart.css";
 import { useState } from "react";
 
 export default function ShoppingCart(props) {
-  console.log(props.shoppingCart);
   var subtotPrice = 0;
   var totPrice;
   props.shoppingCart.forEach((item) => {

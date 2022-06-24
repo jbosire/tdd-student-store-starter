@@ -4,7 +4,7 @@ import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import "./Sidebar.css";
 
 export default function Sidebar(props) {
-  console.log(props.shoppingCart);
+  
   return (
     <section className="sidebar">
       <section className={props.isOpen ? "sidenav open" : "sidenav closed"}>

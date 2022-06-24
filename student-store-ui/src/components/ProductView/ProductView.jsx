@@ -3,8 +3,7 @@ import "./ProductView.css";
 import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductView(props) {
-  console.log(props.shoppingCart);
-  console.log(props.product);
+ 
   return (
     <div className="wrapper">
       <div className="product-view">

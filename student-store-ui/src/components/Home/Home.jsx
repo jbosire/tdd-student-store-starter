@@ -4,6 +4,8 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Hero from "../Hero/Hero";
 import ProductGrid from "../ProductGrid/ProductGrid";
+import About from "../About/About";
+import Contact from "../Contact/Contact";
 import { useState } from "react";
 
 export default function Home(props) {
@@ -18,18 +20,7 @@ export default function Home(props) {
 
   const handleOnTextChange = (event) => {
     setSearchText(event.target.value);
-    console.log(searchText);
   };
-
-  var searchItems = props.products.filter((datum) => {
-    return datum.name.toLowerCase().includes(searchText.toLowerCase());
-  });
-
-  if (selectedCategory != "") {
-    searchItems = searchItems.filter((datum) => {
-      return datum.category === selectedCategory;
-    });
-  }
 
   const handleToggle = () => {
     if (open) {
@@ -102,6 +93,16 @@ export default function Home(props) {
       setSelectedCategory("tech");
     }
   };
+
+  var searchItems = props.products.filter((datum) => {
+    return datum.name.toLowerCase().includes(searchText.toLowerCase());
+  });
+
+  if (selectedCategory != "") {
+    searchItems = searchItems.filter((datum) => {
+      return datum.category === selectedCategory;
+    });
+  }
 
   return (
     <div className="home">
@@ -192,6 +193,9 @@ export default function Home(props) {
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
         shoppingCart={props.shoppingCart}
       />
+
+      <About id="#About" />
+      <Contact />
     </div>
   );
 }

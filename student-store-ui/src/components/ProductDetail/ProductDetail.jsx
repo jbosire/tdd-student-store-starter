@@ -21,7 +21,7 @@ export default function ProductDetail(props) {
     try {
       let response = await axios.get(url);
       let responseData = response.data.product;
-      console.log(responseData);
+    
 
       setProduct(responseData);
     } catch (e) {
@@ -32,7 +32,7 @@ export default function ProductDetail(props) {
   if (product === null) {
     return <NotFound />;
   }
-  console.log(product);
+  
 
   return (
     <div className="product-detail">

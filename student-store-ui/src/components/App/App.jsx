@@ -55,7 +55,7 @@ export default function App() {
 
     setShoppingCart([newItem, ...shoppingCart]);
 
-    console.log(shoppingCart);
+   
   };
 
   const handleRemoveItemFromCart = (productId) => {
