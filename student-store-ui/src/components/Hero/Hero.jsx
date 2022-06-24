@@ -4,8 +4,8 @@ import "./Hero.css";
 export default function Hero() {
   return (
     <div className="Hero">
-      <div class="heroItems">
-        <div class="intro">
+      <div className="heroItems">
+        <div className="intro">
           Welcome!
           <h1 className="merch">Find your merch!</h1>
           <h2 className="intromsg">

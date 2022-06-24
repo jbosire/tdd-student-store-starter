@@ -76,8 +76,6 @@ export default function App() {
     setShoppingCart(newCart);
   };
 
-  // console.log(shoppingCart);
-
   const handleOnToggle = () => {
     if (isOpen) {
       setIsOpen(false);
@@ -117,6 +115,7 @@ export default function App() {
                 <ProductDetail
                   handleAddItemToCart={() => handleAddItemToCart()}
                   handleRemoveItemFromCart={() => handleRemoveItemFromCart()}
+                  shoppingCart={shoppingCart}
                 />
               }
             />

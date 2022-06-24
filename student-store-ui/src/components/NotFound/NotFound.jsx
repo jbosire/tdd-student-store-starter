@@ -6,9 +6,10 @@ import Sidebar from "../Sidebar/Sidebar"
 export default function NotFound(){
     return (
         <div className="notFound">
-            <p>Error 404: NOT FOUND</p>
+            
             <Navbar />
             <Sidebar />
+            <p className="notAvail">Error 404: NOT FOUND</p>
             </div>
             )
 }
