@@ -44,6 +44,7 @@ export default function App() {
       if (shoppingCart[i].itemId === productId) {
         shoppingCart[i].quantity++;
         setShoppingCart([...shoppingCart]);
+        
         return;
       }
     }
@@ -53,6 +54,8 @@ export default function App() {
     };
 
     setShoppingCart([newItem, ...shoppingCart]);
+
+    console.log(shoppingCart);
   };
 
   const handleRemoveItemFromCart = (productId) => {
@@ -73,7 +76,7 @@ export default function App() {
       }
     }
 
-    setShoppingCart(newCart);
+    
   };
 
   const handleOnToggle = () => {

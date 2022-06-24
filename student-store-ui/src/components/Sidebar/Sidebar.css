@@ -17,6 +17,16 @@
   transition: 0.4s;
 }
 
+.closedIcon.closed{
+  background-color: #2c4047;
+  border: 0ch;
+  padding-top: 1.2cm;
+  
+}
+
+.closedIcon.open{
+  display: none;
+}
 .sidenav .closed {
   width: 60px;
   transition: 0.4s;
@@ -33,4 +43,9 @@
 }
 .toggle-button.open {
   transform: rotate(180deg);
+}
+
+.allitems{
+  display: flex;
+  flex-direction: column;
 }

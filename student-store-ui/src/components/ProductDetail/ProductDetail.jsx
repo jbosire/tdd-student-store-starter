@@ -10,9 +10,10 @@ import { useEffect } from "react";
 import axios from "axios";
 
 export default function ProductDetail(props) {
+  console.log(props.shoppingCart);
   const [product, setProduct] = useState(null);
   let { productId } = useParams();
- 
+
   useEffect(async () => {
     let url =
       `https://codepath-store-api.herokuapp.com/store` + `/` + productId;
@@ -20,10 +21,11 @@ export default function ProductDetail(props) {
     try {
       let response = await axios.get(url);
       let responseData = response.data.product;
+      console.log(responseData);
 
       setProduct(responseData);
     } catch (e) {
-      //  console.log(e);
+      console.log(e);
     }
   }, []);
 

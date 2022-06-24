@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 export default function ProductCard(props) {
+  //fix button enabling
+  
+
   return (
     <div className="product-card">
       <div className="media">
@@ -31,6 +34,7 @@ export default function ProductCard(props) {
             <button
               className="remove"
               onClick={() => props.handleRemoveItemFromCart(props.product.id)}
+              
             >
               {" "}
               <i className="material-icons">remove</i>

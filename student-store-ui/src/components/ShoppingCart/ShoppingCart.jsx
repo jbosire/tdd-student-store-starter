@@ -3,16 +3,39 @@ import "./ShoppingCart.css";
 import { useState } from "react";
 
 export default function ShoppingCart(props) {
-  var totPrice = 0;
+  console.log(props.shoppingCart);
+  var subtotPrice = 0;
+  var totPrice;
   props.shoppingCart.forEach((item) => {
-    totPrice +=
+    subtotPrice +=
       props.products.find((elem) => elem.id === item.itemId).price *
       item.quantity;
   });
 
-  var taxes = totPrice * 0.0875;
+  var taxes = subtotPrice * 0.0875;
+  totPrice = subtotPrice + taxes;
 
-  
+  totPrice = Math.round((totPrice + Number.EPSILON) * 100) / 100;
+  subtotPrice = Math.round((subtotPrice + Number.EPSILON) * 100) / 100;
+  taxes = Math.round((taxes + Number.EPSILON) * 100) / 100;
+
+  if (props.shoppingCart.length === 0) {
+    return (
+      <div className="shopping-cart">
+        <div className={props.isOpen ? "open" : "closed"}>
+          <h3 className="notif">
+            Shopping Cart
+            <span className="icon">
+              <i className="material-icons md-48">add_shopping_cart</i>
+            </span>
+          </h3>
+          <div className="notification">
+            No items added to cart yet. Start shopping now!
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="shopping-cart">
@@ -33,7 +56,7 @@ export default function ShoppingCart(props) {
             </div>
 
             {props.shoppingCart.map((item, idx) => (
-              <div className="product-row">
+              <div className="product-row" key={idx}>
                 <span className="flex-2 cart-product-name">
                   {props.products.find((elem) => elem.id === item.itemId).name}
                 </span>
@@ -41,12 +64,15 @@ export default function ShoppingCart(props) {
                   {item.quantity}
                 </span>
                 <span className="center cart-product-price">
-                {"$" + props.products.find((elem) => elem.id === item.itemId).price}
-                </span>
-                <span className="center cart-product-subtotal">
-                 {"$" + item.quantity *
+                  {"$" +
                     props.products.find((elem) => elem.id === item.itemId)
                       .price}
+                </span>
+                <span className="center cart-product-subtotal">
+                  {"$" +
+                    item.quantity *
+                      props.products.find((elem) => elem.id === item.itemId)
+                        .price}
                 </span>
               </div>
             ))}
@@ -56,7 +82,7 @@ export default function ShoppingCart(props) {
               <span className="label">Subtotal</span>
               <span></span>
               <span></span>
-              <span className="center subtotal">{"$" + totPrice}</span>
+              <span className="center subtotal">{"$" + subtotPrice}</span>
             </div>
             <div className="receipt-taxes">
               <span className="label">Taxes and Fees</span>
@@ -68,7 +94,7 @@ export default function ShoppingCart(props) {
               <span className="label">Total</span>
               <span></span>
               <span></span>
-              <span className="center total-price">{"$" + totPrice + taxes}</span>
+              <span className="center total-price">{"$" + totPrice}</span>
             </div>
           </div>
         </div>

@@ -3,6 +3,10 @@
   color: white;
 }
 
+.shopping-cart .closed {
+  display: none;
+}
+
 .shopping-cart .open {
   max-width: 550px;
 }
@@ -13,6 +17,12 @@
 
 div {
   display: block;
+}
+.notif {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .shopping-cart .open > h3 {
@@ -121,15 +131,12 @@ div {
   font-weight: 600;
 }
 
-
-.shopping-cart .receipt .receipt-total{
-    border-top: solid 1px #e4e4e4;
+.shopping-cart .receipt .receipt-total {
+  border-top: solid 1px #e4e4e4;
 }
-
 
 span,
 div,
-p,
 h1,
 h2,
 h3,
@@ -141,4 +148,10 @@ ol {
   margin: 0;
   padding: 0;
   color: #212121;
+}
+
+.notification {
+  color: white;
+  text-align: center;
+  margin: 10px;
 }

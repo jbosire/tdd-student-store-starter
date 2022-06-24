@@ -4,7 +4,7 @@ import "../ProductCard/ProductCard";
 import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductGrid(props) {
-  
+  console.log(props.shoppingCart);
 
   return (
     <div className="product-grid">
