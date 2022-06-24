@@ -13,25 +13,28 @@ export default function Navbar() {
       <Logo className="logo" />
 
       <div className="socials">
-        <ul className="sociallinks">
-          <li>
-            <span>
-              <a href="https://twitter.com/codepath?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-                <SocialIcon network="twitter" bgColor="#2c4047" fgColor="#fff"/>
-              </a>
-            </span>
-            <span>
-              <a href="https://www.instagram.com/codepathorg/">
-              <SocialIcon network="instagram" bgColor="#2c4047" fgColor="#fff"/>
-              </a>
-            </span>
-            <span>
-              <a href="https://www.facebook.com/codepath.org/">
-              <SocialIcon network="facebook" bgColor="#2c4047" fgColor="#fff"/>
-              </a>
-            </span>
-          </li>
-        </ul>
+        <div className="sociallinks">
+          <SocialIcon
+            url="https://twitter.com/codepath?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+            network="twitter"
+            bgColor="#2c4047"
+            fgColor="#fff"
+          />
+
+          <SocialIcon
+            url="https://www.instagram.com/codepathorg/"
+            network="instagram"
+            bgColor="#2c4047"
+            fgColor="#fff"
+          />
+
+          <SocialIcon
+            url="https://www.facebook.com/codepath.org/"
+            network="facebook"
+            bgColor="#2c4047"
+            fgColor="#fff"
+          />
+        </div>
       </div>
 
       <ul className="link">
