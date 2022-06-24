@@ -1,4 +1,5 @@
 import * as React from "react";
+import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import "./Sidebar.css";
 
 export default function Sidebar(props) {
@@ -17,6 +18,7 @@ export default function Sidebar(props) {
         
         </button>
         </div>
+        <ShoppingCart isOpen={props.isOpen} shoppingCart={props.shoppingCart} products={props.products}/>
       </section>
     </section>
   );
