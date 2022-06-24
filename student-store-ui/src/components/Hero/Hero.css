@@ -16,18 +16,22 @@
   font-weight: bold;
 }
 
-.hero-img{
-    width: 120px;
-    height: 120px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-left: 50px;
-    margin-right: 105px;
+.hero-img {
+  width: 120px;
+  height: 120px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 50px;
+  margin-right: 105px;
+}
+
+.intromsg{
+  color: white;
 }
 
 .heroItems {
-  background: #00c385;
-  max-width: 1000px;
+  background: #014b34;
+  max-width: 1160px;
   width: 100%;
   margin-top: 0px;
   margin-right: auto;
@@ -43,9 +47,8 @@
 .intro h1 {
   color: white;
   font-size: 60px;
-  
 }
 
 .intro h2 {
-    font-size: 25px;
+  font-size: 25px;
 }
