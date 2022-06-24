@@ -44,7 +44,7 @@ export default function App() {
       if (shoppingCart[i].itemId === productId) {
         shoppingCart[i].quantity++;
         setShoppingCart([...shoppingCart]);
-        
+
         return;
       }
     }
@@ -75,8 +75,6 @@ export default function App() {
         }
       }
     }
-
-    
   };
 
   const handleOnToggle = () => {
@@ -119,6 +117,16 @@ export default function App() {
                   handleAddItemToCart={() => handleAddItemToCart()}
                   handleRemoveItemFromCart={() => handleRemoveItemFromCart()}
                   shoppingCart={shoppingCart}
+                  isOpen={isOpen}
+                  products={products}
+                  handleOnCheckoutFormChange={() =>
+                    handleOnCheckoutFormChange()
+                  }
+                  handleOnSubmitCheckoutForm={() =>
+                    handleOnSubmitCheckoutForm()
+                  }
+                  handleOnToggle={() => handleOnToggle()}
+                  checkoutForm={checkoutForm}
                 />
               }
             />

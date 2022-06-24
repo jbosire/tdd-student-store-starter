@@ -32,12 +32,20 @@ export default function ProductDetail(props) {
   if (product === null) {
     return <NotFound />;
   }
-  //console.log(product);
+  console.log(product);
 
   return (
     <div className="product-detail">
       <Navbar />
-      <Sidebar />
+      <Sidebar
+        handleOnCheckOutFormChange={props.handleOnCheckOutFormChange}
+        handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
+        handleOnToggle={props.handleOnToggle}
+        checkoutForm={props.checkoutForm}
+        isOpen={props.isOpen}
+        shoppingCart={props.shoppingCart}
+        products={props.products}
+      />
       <ProductView
         product={product}
         productId={product.id}

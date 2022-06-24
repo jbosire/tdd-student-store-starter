@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 
 export default function ProductCard(props) {
-  //fix button enabling
+  
   
 
   return (
