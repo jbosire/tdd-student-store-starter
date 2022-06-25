@@ -16,7 +16,7 @@ export default function ProductGrid(props) {
       {props.products.map((product, idx) => {
         return (
           <ProductCard
-            product={product}
+            product= {product}
             productId={product.id}
             quantity={
               props.shoppingCart.find((item) => item.itemId === product.id)

@@ -16,10 +16,12 @@ export default function ProductDetail(props) {
   useEffect(async () => {
     let url =
       `https://codepath-store-api.herokuapp.com/store` + `/` + productId;
+    console.log(url);
 
     try {
       let response = await axios.get(url);
       let responseData = response.data.product;
+      console.log(responseData);
 
       setProduct(responseData);
     } catch (e) {

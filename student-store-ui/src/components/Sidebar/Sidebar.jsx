@@ -29,6 +29,7 @@ export default function Sidebar(props) {
           isOpen={props.isOpen}
           shoppingCart={props.shoppingCart}
           products={props.products}
+          subtotal={props.subtotal}
         />
         <CheckoutForm
           handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}

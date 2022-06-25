@@ -22,6 +22,7 @@ export default function App() {
   const [isOpen, setIsOpen] = useState(null);
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setcheckoutForm] = useState(null);
+  const [subtotal, setSubtotal] = useState(null);
 
   useEffect(async () => {
     let url = `https://codepath-store-api.herokuapp.com/store`;
@@ -44,6 +45,9 @@ export default function App() {
       if (shoppingCart[i].itemId === productId) {
         shoppingCart[i].quantity++;
         setShoppingCart([...shoppingCart]);
+        var tempPrice =
+          products.find((item) => item.id === productId).price + subtotal;
+        setSubtotal(tempPrice);
 
         return;
       }
@@ -54,8 +58,9 @@ export default function App() {
     };
 
     setShoppingCart([newItem, ...shoppingCart]);
-
-   
+    var tempPrice =
+      products.find((item) => item.id === productId).price + subtotal;
+    setSubtotal(tempPrice);
   };
 
   const handleRemoveItemFromCart = (productId) => {
@@ -67,10 +72,16 @@ export default function App() {
         if (shoppingCart[i].quantity != 1) {
           shoppingCart[i].quantity--;
           setShoppingCart([...shoppingCart]);
+          var tempPrice =
+            subtotal - products.find((item) => item.id === productId).price;
+          setSubtotal(tempPrice);
           return;
         } else {
           shoppingCart.splice(i, 1);
           setShoppingCart([...shoppingCart]);
+          var tempPrice =
+            subtotal - products.find((item) => item.id === productId).price;
+          setSubtotal(tempPrice);
           return;
         }
       }
@@ -107,6 +118,8 @@ export default function App() {
                   shoppingCart={shoppingCart}
                   isOpen={isOpen}
                   checkoutForm={checkoutForm}
+                  setShoppingCart={setShoppingCart}
+                  subtotal={subtotal}
                 />
               }
             />
@@ -114,18 +127,14 @@ export default function App() {
               path="/products/:productId"
               element={
                 <ProductDetail
-                  handleAddItemToCart={() => handleAddItemToCart()}
-                  handleRemoveItemFromCart={() => handleRemoveItemFromCart()}
+                  handleAddItemToCart={handleAddItemToCart}
+                  handleRemoveItemFromCart={handleRemoveItemFromCart}
                   shoppingCart={shoppingCart}
                   isOpen={isOpen}
                   products={products}
-                  handleOnCheckoutFormChange={() =>
-                    handleOnCheckoutFormChange()
-                  }
-                  handleOnSubmitCheckoutForm={() =>
-                    handleOnSubmitCheckoutForm()
-                  }
-                  handleOnToggle={() => handleOnToggle()}
+                  handleOnCheckoutFormChange={handleOnCheckoutFormChange}
+                  handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
+                  handleOnToggle={handleOnToggle}
                   checkoutForm={checkoutForm}
                 />
               }

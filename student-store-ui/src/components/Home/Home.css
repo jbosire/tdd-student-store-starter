@@ -108,6 +108,7 @@
   align-items: center;
   justify-content: center;
   margin-left: 20px;
+  cursor: pointer;
 }
 
 .sub-navbar .content .cart a {

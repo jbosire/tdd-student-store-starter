@@ -30,6 +30,10 @@ export default function Home(props) {
     }
   };
 
+  const handleReset = () => {
+    props.setShoppingCart([]);
+  };
+
   const handleAll = () => {
     if (all) {
       setAll(false);
@@ -115,6 +119,7 @@ export default function Home(props) {
         isOpen={props.isOpen}
         shoppingCart={props.shoppingCart}
         products={props.products}
+        subtotal={props.subtotal}
       />
       <Hero />
       <nav className="sub-navbar">
@@ -134,11 +139,9 @@ export default function Home(props) {
                 <i className="material-icons">help</i>
                 Help
               </span>
-              <div className="cart">
-                <a href="/">
-                  My Cart
-                  <i className="material-icons">shopping_cart</i>
-                </a>
+              <div className="cart" onClick={handleReset}>
+                Reset Cart
+                <i className="material-icons">shopping_cart</i>
               </div>
             </div>
           </div>
@@ -187,9 +190,7 @@ export default function Home(props) {
         </div>
       </nav>
 
-      <a id="BuyNow">
-        
-      </a>
+      <a id="BuyNow"></a>
 
       <ProductGrid
         products={searchItems}
@@ -243,29 +244,29 @@ export default function Home(props) {
                   <li>Register</li>
                   <li>Account Setting</li>
                   <li>My Orders</li>
-                
                 </ul>
               </div>
-
 
               <div className="link-column">
                 <h4>Our App</h4>
                 <ul>
                   <li>
-                    <img src="https://codepath-student-store-demo.surge.sh/assets/app_store.a7d8c549.svg" alt="app store"/>
+                    <img
+                      src="https://codepath-student-store-demo.surge.sh/assets/app_store.a7d8c549.svg"
+                      alt="app store"
+                    />
                   </li>
                   <li>
-                  <img src="https://codepath-student-store-demo.surge.sh/assets/google_play.27aab7c8.svg" alt="app store"/>
+                    <img
+                      src="https://codepath-student-store-demo.surge.sh/assets/google_play.27aab7c8.svg"
+                      alt="app store"
+                    />
                   </li>
-        
                 </ul>
               </div>
-
             </div>
           </div>
-
         </div>
-
       </footer>
     </div>
   );
