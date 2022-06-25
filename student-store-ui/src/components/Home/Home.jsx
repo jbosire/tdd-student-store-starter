@@ -187,6 +187,10 @@ export default function Home(props) {
         </div>
       </nav>
 
+      <a id="BuyNow">
+        
+      </a>
+
       <ProductGrid
         products={searchItems}
         handleAddItemToCart={props.handleAddItemToCart}
@@ -194,7 +198,7 @@ export default function Home(props) {
         shoppingCart={props.shoppingCart}
       />
 
-      <About id="#About" />
+      <About />
       <Contact />
       <footer className="footer">
         <div className="content">

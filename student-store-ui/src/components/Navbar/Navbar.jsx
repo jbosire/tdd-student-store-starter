@@ -42,13 +42,13 @@ export default function Navbar() {
           <Link to="/"> Home </Link>
         </li>
         <li>
-          <Link to="/#About"> About Us </Link>
+          <a href="/#AboutUs"> About Us </a>
         </li>
         <li>
-          <Link to="/#Contact"> Contact Us </Link>
+          <a href="/#ContactUs"> Contact Us </a>
         </li>
         <li>
-          <Link to="/#BuyNow"> Buy Now</Link>
+          <a href="/#BuyNow"> Buy Now</a>
         </li>
       </ul>
     </nav>

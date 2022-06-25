@@ -5,7 +5,9 @@ export default function About() {
   return (
     <div className="about" id="About">
       <div className="content">
-        <h3>About</h3>
+        <a id="AboutUs">
+          <h3>About</h3>
+        </a>
         <div className="summary">
           <div className="text">
             <p>

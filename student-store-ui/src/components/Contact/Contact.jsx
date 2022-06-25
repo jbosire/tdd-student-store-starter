@@ -6,7 +6,9 @@ export default function Contact() {
   return (
     <div id="Contact" className="contact">
       <div className="content">
+        <a id="ContactUs">
         <h3>Contact Us</h3>
+        </a>
         <div className="summary">
           <ul className="info">
             <li>
