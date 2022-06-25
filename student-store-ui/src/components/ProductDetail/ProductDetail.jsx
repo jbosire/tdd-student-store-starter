@@ -10,7 +10,6 @@ import { useEffect } from "react";
 import axios from "axios";
 
 export default function ProductDetail(props) {
-  console.log(props.shoppingCart);
   const [product, setProduct] = useState(null);
   let { productId } = useParams();
 
@@ -21,7 +20,6 @@ export default function ProductDetail(props) {
     try {
       let response = await axios.get(url);
       let responseData = response.data.product;
-    
 
       setProduct(responseData);
     } catch (e) {
@@ -32,7 +30,6 @@ export default function ProductDetail(props) {
   if (product === null) {
     return <NotFound />;
   }
-  
 
   return (
     <div className="product-detail">

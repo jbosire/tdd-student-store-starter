@@ -4,7 +4,7 @@ import "../ProductCard/ProductCard";
 import ProductCard from "../ProductCard/ProductCard";
 
 export default function ProductGrid(props) {
-  console.log(props.products.length);
+  
   if(props.products.length === 0){
     return (
       <p className="errorMsg">Sorry! No products meet your search criteria</p>
