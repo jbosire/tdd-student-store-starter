@@ -2,16 +2,23 @@ import * as React from "react";
 import "./ShoppingCart.css";
 import { useState } from "react";
 
-export default function ShoppingCart({isOpen,shoppingCart,products,subtotal}) {
+export default function ShoppingCart({
+  isOpen,
+  shoppingCart,
+  products,
+  subtotal,
+  quantity,
+}) {
+  
 
   var taxes = subtotal * 0.0875;
   var totPrice = subtotal + taxes;
 
   totPrice = Math.round((totPrice + Number.EPSILON) * 100) / 100;
-  
+
   taxes = Math.round((taxes + Number.EPSILON) * 100) / 100;
 
-  if (shoppingCart.length === 0) {
+  if (quantity === 0) {
     return (
       <div className="shopping-cart">
         <div className={isOpen ? "open" : "closed"}>
@@ -56,15 +63,12 @@ export default function ShoppingCart({isOpen,shoppingCart,products,subtotal}) {
                   {item.quantity}
                 </span>
                 <span className="center cart-product-price">
-                  {"$" +
-                    products.find((elem) => elem.id === item.itemId)
-                      .price}
+                  {"$" + products.find((elem) => elem.id === item.itemId).price}
                 </span>
                 <span className="center cart-product-subtotal">
                   {"$" +
                     item.quantity *
-                      products.find((elem) => elem.id === item.itemId)
-                        .price}
+                      products.find((elem) => elem.id === item.itemId).price}
                 </span>
               </div>
             ))}

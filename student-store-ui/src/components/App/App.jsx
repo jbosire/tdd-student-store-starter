@@ -100,6 +100,8 @@ export default function App() {
 
   const handleOnSubmitCheckoutForm = () => {};
 
+  
+
   return (
     <div className="app">
       <BrowserRouter>

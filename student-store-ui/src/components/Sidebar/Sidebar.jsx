@@ -30,6 +30,7 @@ export default function Sidebar(props) {
           shoppingCart={props.shoppingCart}
           products={props.products}
           subtotal={props.subtotal}
+          quantity={props.shoppingCart.length}
         />
         <CheckoutForm
           handleOnSubmitCheckoutForm={props.handleOnSubmitCheckoutForm}
