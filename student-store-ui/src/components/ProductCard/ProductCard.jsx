@@ -2,22 +2,25 @@ import * as React from "react";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
+import { useState } from "react";
 
 export default function ProductCard(props) {
-  
-  
-
   return (
     <div className="product-card">
-      <div className="media">
+      <div className="media" >
         <Link to={"/products/" + props.product.id}>
-          <img src={props.product.image} />
+          <img src={props.product.image}/>
         </Link>
       </div>
       <div className="product-info">
         <div className="main-info">
           <p className="product-name">{props.product.name}</p>
           <p className="product-price"> {"$" + props.product.price}</p>
+        </div>
+        <div className="desc">
+          <p className={props.showDescription ? "product-description open" : "product-description closed"}>
+            {props.product.description}
+          </p>
         </div>
         <div className="actions">
           {props.showDescription ? (
@@ -34,7 +37,6 @@ export default function ProductCard(props) {
             <button
               className="remove"
               onClick={() => props.handleRemoveItemFromCart(props.product.id)}
-              
             >
               {" "}
               <i className="material-icons">remove</i>

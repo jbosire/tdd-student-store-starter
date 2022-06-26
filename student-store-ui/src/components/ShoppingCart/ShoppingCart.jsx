@@ -7,18 +7,21 @@ export default function ShoppingCart({
   shoppingCart,
   products,
   subtotal,
-  quantity,
-}) {
+  cartSize,
   
+}) {
 
-  var taxes = subtotal * 0.0875;
-  var totPrice = subtotal + taxes;
+  var subprice = Math.round((subtotal + Number.EPSILON) * 100) / 100;
+
+  
+  var taxes = subprice * 0.0875;
+  var totPrice = subprice + taxes;
 
   totPrice = Math.round((totPrice + Number.EPSILON) * 100) / 100;
 
   taxes = Math.round((taxes + Number.EPSILON) * 100) / 100;
 
-  if (quantity === 0) {
+  if (cartSize === 0) {
     return (
       <div className="shopping-cart">
         <div className={isOpen ? "open" : "closed"}>
@@ -53,32 +56,35 @@ export default function ShoppingCart({
               <span className="center">Unit Price</span>
               <span className="center">Cost</span>
             </div>
-
-            {shoppingCart.map((item, idx) => (
-              <div className="product-row" key={idx}>
-                <span className="flex-2 cart-product-name">
-                  {products.find((elem) => elem.id === item.itemId).name}
-                </span>
-                <span className="center cart-product-quantity">
-                  {item.quantity}
-                </span>
-                <span className="center cart-product-price">
-                  {"$" + products.find((elem) => elem.id === item.itemId).price}
-                </span>
-                <span className="center cart-product-subtotal">
-                  {"$" +
-                    item.quantity *
-                      products.find((elem) => elem.id === item.itemId).price}
-                </span>
-              </div>
-            ))}
+            {shoppingCart
+              ? shoppingCart.map((item, idx) => (
+                  <div className="product-row" key={idx}>
+                    <span className="flex-2 cart-product-name">
+                      {products.find((elem) => elem.id === item.itemId).name}
+                    </span>
+                    <span className="center cart-product-quantity">
+                      {item.quantity}
+                    </span>
+                    <span className="center cart-product-price">
+                      {"$" +
+                        products.find((elem) => elem.id === item.itemId).price}
+                    </span>
+                    <span className="center cart-product-subtotal">
+                      {"$" +
+                        item.quantity *
+                          products.find((elem) => elem.id === item.itemId)
+                            .price}
+                    </span>
+                  </div>
+                ))
+              : null}
           </div>
           <div className="receipt">
             <div className="receipt-subtotal">
               <span className="label">Subtotal</span>
               <span></span>
               <span></span>
-              <span className="center subtotal">{"$" + subtotal}</span>
+              <span className="center subtotal">{"$" + subprice}</span>
             </div>
             <div className="receipt-taxes">
               <span className="label">Taxes and Fees</span>

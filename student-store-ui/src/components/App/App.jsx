@@ -23,7 +23,7 @@ export default function App() {
   const [shoppingCart, setShoppingCart] = useState([]);
   const [checkoutForm, setcheckoutForm] = useState(null);
   const [subtotal, setSubtotal] = useState(null);
-
+  
   useEffect(async () => {
     let url = `https://codepath-store-api.herokuapp.com/store`;
 
@@ -111,6 +111,7 @@ export default function App() {
               path="/"
               element={
                 <Home
+                
                   handleOnToggle={handleOnToggle}
                   handleOnCheckoutFormChange={handleOnCheckoutFormChange}
                   handleOnSubmitCheckoutForm={handleOnCheckoutFormChange}
@@ -122,6 +123,8 @@ export default function App() {
                   checkoutForm={checkoutForm}
                   setShoppingCart={setShoppingCart}
                   subtotal={subtotal}
+                  cartSize={shoppingCart.length}
+                  setSubtotal={setSubtotal}
                 />
               }
             />

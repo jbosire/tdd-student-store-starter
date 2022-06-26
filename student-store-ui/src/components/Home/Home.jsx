@@ -32,6 +32,7 @@ export default function Home(props) {
 
   const handleReset = () => {
     props.setShoppingCart([]);
+    props.setSubtotal(0);
   };
 
   const handleAll = () => {
@@ -120,6 +121,8 @@ export default function Home(props) {
         shoppingCart={props.shoppingCart}
         products={props.products}
         subtotal={props.subtotal}
+        setSubtotal={props.setSubtotal}
+        cartSize={props.cartSize}
       />
       <Hero />
       <nav className="sub-navbar">
@@ -197,6 +200,7 @@ export default function Home(props) {
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
         shoppingCart={props.shoppingCart}
+        
       />
 
       <About />

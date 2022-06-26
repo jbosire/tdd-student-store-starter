@@ -2,8 +2,11 @@ import * as React from "react";
 import "./ProductGrid.css";
 import "../ProductCard/ProductCard";
 import ProductCard from "../ProductCard/ProductCard";
+import { useState } from "react";
 
 export default function ProductGrid(props) {
+
+  
   
   if(props.products.length === 0){
     return (
@@ -29,6 +32,7 @@ export default function ProductGrid(props) {
             showDescription={false}
             key={idx}
             shoppingCart={props.shoppingCart}
+           
           />
         );
       })}

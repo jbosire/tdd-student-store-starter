@@ -16,12 +16,10 @@ export default function ProductDetail(props) {
   useEffect(async () => {
     let url =
       `https://codepath-store-api.herokuapp.com/store` + `/` + productId;
-    console.log(url);
 
     try {
       let response = await axios.get(url);
       let responseData = response.data.product;
-      console.log(responseData);
 
       setProduct(responseData);
     } catch (e) {
@@ -44,6 +42,7 @@ export default function ProductDetail(props) {
         isOpen={props.isOpen}
         shoppingCart={props.shoppingCart}
         products={props.products}
+        
       />
       <ProductView
         product={product}
@@ -57,6 +56,7 @@ export default function ProductDetail(props) {
         handleAddItemToCart={props.handleAddItemToCart}
         handleRemoveItemFromCart={props.handleRemoveItemFromCart}
         shoppingCart={props.shoppingCart}
+        showDescription={props.showDescription}
       />
     </div>
   );
