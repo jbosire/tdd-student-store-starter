@@ -141,6 +141,7 @@ export default function App() {
                   handleOnSubmitCheckoutForm={handleOnSubmitCheckoutForm}
                   handleOnToggle={handleOnToggle}
                   checkoutForm={checkoutForm}
+                  subtotal={subtotal}
                 />
               }
             />

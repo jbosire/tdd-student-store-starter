@@ -42,6 +42,7 @@ export default function ProductDetail(props) {
         isOpen={props.isOpen}
         shoppingCart={props.shoppingCart}
         products={props.products}
+        subtotal={props.subtotal}
         
       />
       <ProductView

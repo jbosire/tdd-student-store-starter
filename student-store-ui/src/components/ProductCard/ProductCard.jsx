@@ -7,9 +7,9 @@ import { useState } from "react";
 export default function ProductCard(props) {
   return (
     <div className="product-card">
-      <div className="media" >
+      <div className="media">
         <Link to={"/products/" + props.product.id}>
-          <img src={props.product.image}/>
+          <img src={props.product.image} />
         </Link>
       </div>
       <div className="product-info">
@@ -17,15 +17,15 @@ export default function ProductCard(props) {
           <p className="product-name">{props.product.name}</p>
           <p className="product-price"> {"$" + props.product.price}</p>
         </div>
-        <div className="desc">
-          <p className={props.showDescription ? "product-description open" : "product-description closed"}>
-            {props.product.description}
-          </p>
-        </div>
-        <div className="actions">
-          {props.showDescription ? (
+
+        {props.showDescription ? (
+          <div className="desc">
+            {" "}
             <p className="product-description">{props.product.description}</p>
-          ) : null}
+          </div>
+        ) : null}
+
+        <div className="actions">
           <div className="buttons">
             <button
               className="add"
