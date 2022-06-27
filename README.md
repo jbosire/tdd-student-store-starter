@@ -287,15 +287,15 @@ The following specifications were met on the Express backend and the React front
 
 * Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+Yes this weeks topics were very helpful, especially the twitter lab
 
 * If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
   
-Add your response here
+I would've tried working on storing information in the backend
 
 * Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+The main problem I had was passing props through the relevant components since a lot of stuff was getting lost along the way. But I got a hang of it
 
 ### Open-source libraries used
 
@@ -304,3 +304,5 @@ Add your response here
 ### Shout out
 
 Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+
+Shoutout to Moe, he helped me discover a lot of bugs that I had spent hours on
