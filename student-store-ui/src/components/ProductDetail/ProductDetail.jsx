@@ -14,8 +14,7 @@ export default function ProductDetail(props) {
   let { productId } = useParams();
 
   useEffect(async () => {
-    let url =
-      `http://localhost:3001/store/store/` + productId;
+    let url = `http://localhost:3001/store/` + productId;
 
     try {
       let response = await axios.get(url);

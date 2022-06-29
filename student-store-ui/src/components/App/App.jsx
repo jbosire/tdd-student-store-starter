@@ -25,7 +25,7 @@ export default function App() {
   const [subtotal, setSubtotal] = useState(null);
   
   useEffect(async () => {
-    let url = `http://localhost:3001/store/store`;
+    let url = `http://localhost:3001/store`;
 
     try {
       let response = await axios.get(url);
