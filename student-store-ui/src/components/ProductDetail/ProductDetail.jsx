@@ -43,7 +43,6 @@ export default function ProductDetail(props) {
         shoppingCart={props.shoppingCart}
         products={props.products}
         subtotal={props.subtotal}
-        
       />
       <ProductView
         product={product}
