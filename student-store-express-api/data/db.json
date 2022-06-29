@@ -145,5 +145,66 @@
       "price": 999.99
     }
   ],
-  "purchases": []
+  "purchases": [
+    {
+      "id": 1,
+      "name": "joram",
+      "email": "joramb64@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 20
+        },
+        {
+          "itemId": 5,
+          "quantity": 10
+        }
+      ],
+      "total": 152.25,
+      "createdAt": "Date: 6:29:2022 Time: 15:22:30",
+      "receipt": {
+        "userInfo": {
+          "name": "joram",
+          "email": "joramb64@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for joram available at joramb64@gmail.com",
+          "20 total Coconut Water purchased at a cost of 3.25 for a total cost of 65.",
+          "10 total Fruit Medley purchased at a cost of 7.5 for a total cost of 75.",
+          "Before taxes, the subtotal was $140",
+          "After taxes and fees were applied, the total comes out to $152.25"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "joram",
+      "email": "joramb64@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 20
+        },
+        {
+          "itemId": 5,
+          "quantity": 10
+        }
+      ],
+      "total": 152.25,
+      "createdAt": "Date: 6:29:2022 Time: 15:22:39",
+      "receipt": {
+        "userInfo": {
+          "name": "joram",
+          "email": "joramb64@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for joram available at joramb64@gmail.com",
+          "20 total Coconut Water purchased at a cost of 3.25 for a total cost of 65.",
+          "10 total Fruit Medley purchased at a cost of 7.5 for a total cost of 75.",
+          "Before taxes, the subtotal was $140",
+          "After taxes and fees were applied, the total comes out to $152.25"
+        ]
+      }
+    }
+  ]
 }

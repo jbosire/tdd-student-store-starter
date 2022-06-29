@@ -15,7 +15,7 @@ export default function ProductDetail(props) {
 
   useEffect(async () => {
     let url =
-      `https://codepath-store-api.herokuapp.com/store` + `/` + productId;
+      `http://localhost:3001/store/store/` + productId;
 
     try {
       let response = await axios.get(url);
