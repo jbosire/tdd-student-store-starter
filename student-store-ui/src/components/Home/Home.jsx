@@ -123,6 +123,7 @@ export default function Home(props) {
         subtotal={props.subtotal}
         setSubtotal={props.setSubtotal}
         cartSize={props.cartSize}
+        setShoppingCart={props.setShoppingCart}
       />
       <Hero />
       <nav className="sub-navbar">

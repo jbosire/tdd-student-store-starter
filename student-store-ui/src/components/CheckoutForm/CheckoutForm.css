@@ -93,3 +93,10 @@
   display: none;
   
 }
+
+.checkout-button:disabled{
+ color: gray;
+ border-color: gray;
+ 
+ 
+}
