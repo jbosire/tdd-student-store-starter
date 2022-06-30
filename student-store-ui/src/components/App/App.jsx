@@ -142,6 +142,7 @@ export default function App() {
                   handleOnToggle={handleOnToggle}
                   checkoutForm={checkoutForm}
                   subtotal={subtotal}
+                  cartSize={shoppingCart.length}
                 />
               }
             />

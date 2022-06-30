@@ -28,7 +28,7 @@ router.post("/", (req, res, next) => {
 router.get("/", (req, res, next) => {
   const products = Store.getProducts();
 
-  res.status(200).json({ products: products });
+  res.status(200).json({ "products": products });
 });
 
 router.get("/:productId", (req, res, next) => {
@@ -36,7 +36,7 @@ router.get("/:productId", (req, res, next) => {
 
   const product = Store.getSingleProduct(Number(prodId));
 
-  res.status(200).json({ product: product });
+  res.status(200).json({ "product": product });
 });
 
 module.exports = router;

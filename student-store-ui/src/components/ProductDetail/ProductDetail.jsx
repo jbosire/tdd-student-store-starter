@@ -30,6 +30,8 @@ export default function ProductDetail(props) {
     return <NotFound />;
   }
 
+  
+
   return (
     <div className="product-detail">
       <Navbar />
@@ -42,6 +44,7 @@ export default function ProductDetail(props) {
         shoppingCart={props.shoppingCart}
         products={props.products}
         subtotal={props.subtotal}
+        cartSize={props.cartSize}
       />
       <ProductView
         product={product}

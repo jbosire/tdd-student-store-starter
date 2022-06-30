@@ -41,6 +41,7 @@ export default function Sidebar(props) {
           shoppingCart={props.shoppingCart}
           checkoutForm={props.checkoutForm}
           setShoppingCart={props.setShoppingCart}
+          
         />
       </section>
     </section>

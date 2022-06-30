@@ -6,9 +6,7 @@ import axios from "axios";
 export default function CheckoutForm(props) {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [justSubmitted, setJustSubmitted] = useState(false)
-  const [disable, setDisable] = useState(false)
-
+  
   const handleOnEmailChange = (event) => {
     setEmail(event.target.value);
   };
@@ -54,7 +52,7 @@ export default function CheckoutForm(props) {
             type="text"
             placeholder="Student Name"
             onChange={handleOnNameChange}
-      //      value={justSubmitted ? "" : null}
+    
           />
         </div>
       </div>
@@ -68,7 +66,7 @@ export default function CheckoutForm(props) {
             type="email"
             placeholder="student@codepath.org"
             onChange={handleOnEmailChange}
-     //       value={justSubmitted ? "" : null}
+  
           />
         </div>
       </div>
@@ -91,7 +89,7 @@ export default function CheckoutForm(props) {
       <p className="is-danger"></p>
       <div className="field">
         <div className="control">
-          <button className="button checkout-button" disabled={props.shoppingCart.length ? false : true} onClick={handleOnCheckOut}>
+          <button className="button checkout-button" disabled={props.shoppingCart?.length ? false : true} onClick={handleOnCheckOut}>
             Checkout
           </button>
         </div>
