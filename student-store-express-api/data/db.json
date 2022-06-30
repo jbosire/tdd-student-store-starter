@@ -146,6 +146,60 @@
     }
   ],
   "purchases": [
-   
+    {
+      "id": 1,
+      "name": "joram bosire",
+      "email": "joram.bosire1@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 3
+        },
+        {
+          "itemId": 3,
+          "quantity": 6
+        }
+      ],
+      "total": 30.112875,
+      "createdAt": "Date: 6:30:2022 Time: 1:20:52",
+      "receipt": {
+        "userInfo": {
+          "name": "joram bosire",
+          "email": "joram.bosire1@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for joram bosire available at joram.bosire1@gmail.com",
+          "3 total Coconut Water purchased at a cost of 3.25 for a total cost of 9.75.",
+          "6 total Cinnamon Rolls purchased at a cost of 2.99 for a total cost of 17.94.",
+          "Before taxes, the subtotal was $27.69",
+          "After taxes and fees were applied, the total comes out to $30.112875"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "name": "Giphy Party",
+      "email": "joramb64@gmail.com",
+      "order": [
+        {
+          "itemId": 4,
+          "quantity": 4
+        }
+      ],
+      "total": 14.1375,
+      "createdAt": "Date: 6:30:2022 Time: 1:23:8",
+      "receipt": {
+        "userInfo": {
+          "name": "Giphy Party",
+          "email": "joramb64@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Giphy Party available at joramb64@gmail.com",
+          "4 total Coconut Water purchased at a cost of 3.25 for a total cost of 13.",
+          "Before taxes, the subtotal was $13",
+          "After taxes and fees were applied, the total comes out to $14.1375"
+        ]
+      }
+    }
   ]
 }
