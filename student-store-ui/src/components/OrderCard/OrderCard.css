@@ -1,65 +1,120 @@
-.OrderCard .header {
+/* .OrderCard .header {
   display: flex;
   flex-direction: row;
-  border: solid 1px #e4e4e4;
+  border: solid 1px green;
+  padding: 5px;
   width: 78vw;
- 
-  
- 
+
   justify-content: space-between;
   justify-items: center;
- 
+
   align-items: flex-end;
+} */
+.OrderCard .header{
+display: flex;
+  flex-direction: column;
+ 
+
+ 
+  border-radius: 4px;
+  width: 100;
 }
 
-.OrderCard .headerrow{
-    display: flex;
-    flex-direction: row;
-    width: 78vw;
-    justify-content: space-between;
+.header .overHeader div{
+  font-size: larger;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(73, 118, 0);
 }
 
-.headerrow .center{
-    border: solid 1px #e4e4e4;
-    flex: 1;
+.header .overHeader{
+  display: flex;
+  
+  flex-direction: row;
+  padding-bottom: 7px;
+  
+  justify-content: space-between;
+  border-bottom: solid 1px green;
+
+
+}
+
+.OrderCard .headerrow {
+  display: flex;
+  flex-direction: row;
+  
+ 
+  width: 78vw;
+  transform: translateX(40px);
+  justify-content: center;
+}
+
+
+.headerrow .center {
+  
+  flex: 1;
   color: black;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   font-size: 17px;
- 
+
   margin-left: 15px;
 }
 
-.summary div{
-    display: flex;
-    justify-content: space-between;
-    width: 78vw;
+.summary div {
+  display: flex;
+  justify-content: space-between;
+  width: 78vw;
+}
+.OrderCard {
+  border: solid 1.5px green;
+  border-radius: 0.5em;
+  
 }
 
-.item-row{
-    display: flex;
-    justify-content: space-between;
-    width: 78vw;
-    align-items: center;
+ .item-row {
+  display: flex;
+  justify-content: space-between;
+  width: 78vw;
+  align-items: center;
+  border-top: solid 1px green;
 }
 
-.OrderCard{
 
-    border: solid 1.5px #e4e4e4;
-    border-radius: 0.5em;
-    padding: 0.2cm;
-
-}
-
-.item-row .center{
-    display: flex;
-    
-    display: flex;
+.item-row .center {
+  display: flex;
   flex-direction: row;
+  justify-content:center;
   padding-bottom: 20px;
   margin-top: 10px;
   border-bottom: solid 1px #e4e4e4;
-    flex: 1;
-   
+  flex: 1;
+} 
+
+
+.summary .subtotals{
+  padding-right: 58px;
+  border-top: solid 1px green;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 6px;
+
+}
+
+.summary .taxes{
+  border-top: solid 1px green;
+  padding-right: 58px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 6px;
+
+}
+
+.summary .totals{
+  border-top: solid 1px green;
+  padding-right: 58px;
+  padding-left: 30px;
+  padding-top: 10px;
+  padding-bottom: 6px;
+
 }

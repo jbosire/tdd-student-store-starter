@@ -48,7 +48,7 @@ div {
 .shopping-cart .CartTable .header {
   display: flex;
   flex-direction: column;
-  background: white;
+  background-color: white;
   border: solid 1px #e4e4e4;
   border-radius: 4px;
   width: 100%;
@@ -57,7 +57,7 @@ div {
 .shopping-cart .header-row {
   display: flex;
   height: 50px;
-  background: #2c4047;
+  background: white;
   margin-bottom: 15px;
 }
 
@@ -87,6 +87,7 @@ div {
   padding-bottom: 20px;
   margin-top: 10px;
   border-bottom: solid 1px #e4e4e4;
+  flex: 1;
 }
 
 .shopping-cart .product-row span {

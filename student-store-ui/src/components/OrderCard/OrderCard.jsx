@@ -6,9 +6,11 @@ export default function OrderCard(props) {
   return (
     <div className="OrderCard">
       <div className="header">
-        <div className="ordernumber">Order number {props.purchase.id}</div>
-        <div className="name">{props.purchase.name}</div>
-        <div className="time">{props.purchase.createdAt}</div>
+        <div className="overHeader">
+          <div className="ordernumber">Order number {props.purchase.id}</div>
+          <div className="name">{props.purchase.name}</div>
+          <div className="time">{props.purchase.createdAt}</div>
+        </div>
       </div>
       <div className="headerrow">
         <span className="center">Item</span>
@@ -33,8 +35,9 @@ export default function OrderCard(props) {
               </span>
               <span className="center item-cost">
                 {props.products.find((elem) => elem.id === item.itemId)
-                  ? props.products.find((elem) => elem.id === item.itemId).price * item.quantity
-                  : null} 
+                  ? props.products.find((elem) => elem.id === item.itemId)
+                      .price * item.quantity
+                  : null}
               </span>
             </div>
           ))
