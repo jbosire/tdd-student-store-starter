@@ -44,16 +44,16 @@ export default function OrderCard(props) {
         : null}
       <div className="summary">
         <div className="subtotals">
-          <span className="subtotal">Subtotal</span>
+          <span className="subtotal">SUBTOTAL</span>
           <span className="subtotalval">{props.purchase.subtotal}</span>
         </div>
         <div className="taxes">
-          <span className="tax">Taxes and fees</span>
+          <span className="tax">TAXES AND FEES</span>
           <span className="taxval">{props.purchase.taxes}</span>
         </div>
 
         <div className="totals">
-          <span className="total">Total</span>
+          <span className="total">TOTAL</span>
           <span className="totalval">{props.purchase.total}</span>
         </div>
       </div>

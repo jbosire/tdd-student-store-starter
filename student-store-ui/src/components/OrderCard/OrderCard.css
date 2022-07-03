@@ -44,7 +44,7 @@ display: flex;
   
  
   width: 78vw;
-  transform: translateX(40px);
+  transform: translateX(100px);
   justify-content: center;
 }
 
@@ -93,9 +93,9 @@ display: flex;
 
 
 .summary .subtotals{
-  padding-right: 58px;
+  padding-right: 115px;
   border-top: solid 1px green;
-  padding-left: 30px;
+  padding-left: 80px;
   padding-top: 10px;
   padding-bottom: 6px;
 
@@ -103,8 +103,8 @@ display: flex;
 
 .summary .taxes{
   border-top: solid 1px green;
-  padding-right: 58px;
-  padding-left: 30px;
+  padding-right: 115px;
+  padding-left: 80px;
   padding-top: 10px;
   padding-bottom: 6px;
 
@@ -112,8 +112,8 @@ display: flex;
 
 .summary .totals{
   border-top: solid 1px green;
-  padding-right: 58px;
-  padding-left: 30px;
+  padding-right: 115px;
+  padding-left: 80px;
   padding-top: 10px;
   padding-bottom: 6px;
 
