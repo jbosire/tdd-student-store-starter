@@ -31,6 +31,14 @@ router.get("/", (req, res, next) => {
   res.status(200).json({ "products": products });
 });
 
+router.get("/orders", (req, res, next) => {
+  const purchases = Store.getPurchases();
+
+  res.status(200).json({ "purchases": purchases });
+});
+
+
+
 router.get("/:productId", (req, res, next) => {
   const prodId = req.params.productId;
 

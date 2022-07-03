@@ -3,12 +3,14 @@ import Navbar from "../Navbar/Navbar";
 import Sidebar from "../Sidebar/Sidebar";
 import Home from "../Home/Home";
 import ProductDetail from "../ProductDetail/ProductDetail";
+
 import NotFound from "../NotFound/NotFound";
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import Orders from "../Orders/Orders";
 
 export default function App() {
   var item = {
@@ -24,6 +26,7 @@ export default function App() {
   const [checkoutForm, setcheckoutForm] = useState(null);
   const [subtotal, setSubtotal] = useState(null);
   
+
   useEffect(async () => {
     let url = `http://localhost:3001/store`;
 
@@ -100,8 +103,6 @@ export default function App() {
 
   const handleOnSubmitCheckoutForm = () => {};
 
-  
-
   return (
     <div className="app">
       <BrowserRouter>
@@ -111,7 +112,6 @@ export default function App() {
               path="/"
               element={
                 <Home
-                
                   handleOnToggle={handleOnToggle}
                   handleOnCheckoutFormChange={handleOnCheckoutFormChange}
                   handleOnSubmitCheckoutForm={handleOnCheckoutFormChange}
@@ -146,6 +146,8 @@ export default function App() {
                 />
               }
             />
+
+            <Route path="/orders" element={<Orders products={products}/>} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </main>

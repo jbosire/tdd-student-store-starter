@@ -1,0 +1,17 @@
+.noItems p{
+    color: rgb(1, 57, 1);
+    font-size: xx-large;
+    font-style: italic;
+}
+
+.orders{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+   
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+    align-items: center;
+}

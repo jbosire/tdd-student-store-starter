@@ -3,6 +3,12 @@ const { storage } = require("../data/storage");
 
 //var products = 5;
 class Store {
+
+  static  getPurchases(){
+    const purchases = storage.get("purchases").value();
+    return purchases;
+  }
+
   static getProducts() {
     const products = storage.get("products").value();
 
@@ -113,12 +119,20 @@ class Store {
   }
 
   static purchaseOrder(cart, user) {
+    var subtotal = this.totCost(cart);
+    subtotal = Math.round((subtotal + Number.EPSILON) * 100) / 100;
+    var taxes = subtotal * 0.0875;
+    taxes = Math.round((taxes + Number.EPSILON) * 100) / 100;
+    var total = subtotal + taxes
+    total = Math.round((total + Number.EPSILON) * 100) / 100;
     var order = {
       id: this.createId(),
       name: user.name,
       email: user.email,
       order: cart,
-      total: this.totCost(cart) * 1.0875,
+      taxes: taxes,
+      subtotal: subtotal,
+      total: total,
       createdAt: this.createDate(),
       receipt: this.createReceipt(cart,user)
     };

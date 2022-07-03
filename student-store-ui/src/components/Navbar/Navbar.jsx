@@ -50,6 +50,9 @@ export default function Navbar() {
         <li>
           <a href="/#BuyNow"> Buy Now</a>
         </li>
+        <li>
+          <Link to= "/orders">Orders</Link>
+        </li>
       </ul>
     </nav>
   );

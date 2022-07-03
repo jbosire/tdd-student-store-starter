@@ -148,56 +148,75 @@
   "purchases": [
     {
       "id": 1,
-      "name": "joram bosire",
-      "email": "joram.bosire1@gmail.com",
+      "name": "Joram Bosire",
+      "email": "joramb64@gmail.com",
       "order": [
         {
           "itemId": 4,
-          "quantity": 3
+          "quantity": 1
         },
         {
-          "itemId": 3,
-          "quantity": 6
+          "itemId": 5,
+          "quantity": 2
+        },
+        {
+          "itemId": 2,
+          "quantity": 2
         }
       ],
-      "total": 30.112875,
-      "createdAt": "Date: 6:30:2022 Time: 1:20:52",
+      "taxes": 1.86,
+      "subtotal": 21.25,
+      "total": 23.11,
+      "createdAt": "Date: 7:3:2022 Time: 0:57:49",
       "receipt": {
         "userInfo": {
-          "name": "joram bosire",
-          "email": "joram.bosire1@gmail.com"
+          "name": "Joram Bosire",
+          "email": "joramb64@gmail.com"
         },
         "lines": [
-          "Showing receipt for joram bosire available at joram.bosire1@gmail.com",
-          "3 total Coconut Water purchased at a cost of 3.25 for a total cost of 9.75.",
-          "6 total Cinnamon Rolls purchased at a cost of 2.99 for a total cost of 17.94.",
-          "Before taxes, the subtotal was $27.69",
-          "After taxes and fees were applied, the total comes out to $30.112875"
+          "Showing receipt for Joram Bosire available at joramb64@gmail.com",
+          "1 total Coconut Water purchased at a cost of 3.25 for a total cost of 3.25.",
+          "2 total Fruit Medley purchased at a cost of 7.5 for a total cost of 15.",
+          "2 total Flamin Hot Cheetos purchased at a cost of 1.5 for a total cost of 3.",
+          "Before taxes, the subtotal was $21.25",
+          "After taxes and fees were applied, the total comes out to $23.109374999999996"
         ]
       }
     },
     {
       "id": 2,
       "name": "Giphy Party",
-      "email": "joramb64@gmail.com",
+      "email": "giphy@gif.com",
       "order": [
         {
-          "itemId": 4,
-          "quantity": 4
+          "itemId": 13,
+          "quantity": 3
+        },
+        {
+          "itemId": 14,
+          "quantity": 2
+        },
+        {
+          "itemId": 11,
+          "quantity": 2
         }
       ],
-      "total": 14.1375,
-      "createdAt": "Date: 6:30:2022 Time: 1:23:8",
+      "taxes": 72.63,
+      "subtotal": 830,
+      "total": 902.63,
+      "createdAt": "Date: 7:3:2022 Time: 1:9:21",
       "receipt": {
         "userInfo": {
           "name": "Giphy Party",
-          "email": "joramb64@gmail.com"
+          "email": "giphy@gif.com"
         },
         "lines": [
-          "Showing receipt for Giphy Party available at joramb64@gmail.com",
-          "4 total Coconut Water purchased at a cost of 3.25 for a total cost of 13.",
-          "Before taxes, the subtotal was $13",
-          "After taxes and fees were applied, the total comes out to $14.1375"
+          "Showing receipt for Giphy Party available at giphy@gif.com",
+          "3 total Copper Bracelet purchased at a cost of 70 for a total cost of 210.",
+          "2 total Keyboard purchased at a cost of 110 for a total cost of 220.",
+          "2 total Matching Rings purchased at a cost of 200 for a total cost of 400.",
+          "Before taxes, the subtotal was $830",
+          "After taxes and fees were applied, the total comes out to $902.6249999999999"
         ]
       }
     }
