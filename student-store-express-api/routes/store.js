@@ -37,6 +37,15 @@ router.get("/orders", (req, res, next) => {
   res.status(200).json({ "purchases": purchases });
 });
 
+router.delete("/orders", (req, res, next) => {
+ // const purchases = Store.getPurchases();
+
+ // res.status(200).json({ "purchases": purchases });
+ console.log(req);
+ console.log(res);
+ res.send("delete request");
+});
+
 
 
 router.get("/:productId", (req, res, next) => {

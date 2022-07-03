@@ -1,8 +1,18 @@
 import * as React from "react";
 import "./OrderCard.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function OrderCard(props) {
+
+  const handleOnDelete = () => {
+    console.log("delete")
+    
+    axios.delete(`http://localhost:3001/store/orders`);
+
+  };
+
+
   return (
     <div className="OrderCard">
       <div className="header">
@@ -57,6 +67,14 @@ export default function OrderCard(props) {
           <span className="totalval">{props.purchase.total}</span>
         </div>
       </div>
+
+      <button
+            className="delete"
+            onClick={handleOnDelete}
+            
+          >
+            <i className="material-icons md-48">delete</i>
+          </button>
     </div>
   );
 }
