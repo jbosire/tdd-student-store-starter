@@ -219,6 +219,38 @@
           "After taxes and fees were applied, the total comes out to $902.6249999999999"
         ]
       }
+    },
+    {
+      "id": 3,
+      "name": "Giphy Party",
+      "email": "joram.bosire1@gmail.com",
+      "order": [
+        {
+          "itemId": 7,
+          "quantity": 3
+        },
+        {
+          "itemId": 8,
+          "quantity": 3
+        }
+      ],
+      "taxes": 6.56,
+      "subtotal": 74.94,
+      "total": 81.5,
+      "createdAt": "Date: 7:3:2022 Time: 16:42:29",
+      "receipt": {
+        "userInfo": {
+          "name": "Giphy Party",
+          "email": "joram.bosire1@gmail.com"
+        },
+        "lines": [
+          "Showing receipt for Giphy Party available at joram.bosire1@gmail.com",
+          "3 total Striped Socks purchased at a cost of 4.99 for a total cost of 14.97.",
+          "3 total Knitted Beanie purchased at a cost of 19.99 for a total cost of 59.97.",
+          "Before taxes, the subtotal was $74.94",
+          "After taxes and fees were applied, the total comes out to $81.49725"
+        ]
+      }
     }
   ]
 }
